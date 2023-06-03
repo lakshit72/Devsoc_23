@@ -4,14 +4,14 @@ const UserSchema = new mongoose.Schema({
     userName:{type:String,required:true,unique:true},
     userPassWord:{type:String,required:true},
     teams:[{
-        teamId:{type:String}
+        type:String
     }],
     coordinates:[{
         latitude:{type:String},
         longitude:{type:String}
     }],
     availableFor:[{
-        _event:{type:String}
+        type:String
     }],
     linkedIn:{type:String},
     desc:{type:String},

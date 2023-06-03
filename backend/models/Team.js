@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const TeamSchema = new mongoose.Schema({
     leader:{type:String,required:true},
     members:[{
-        memberId:{type:String}
+        type:String
     }],
     teamName:{type:String,required:true},
     eventName:{type:String,required:true},
