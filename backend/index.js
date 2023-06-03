@@ -1,7 +1,9 @@
+require("dotenv").config()
 const mongoose = require("mongoose")
 const express = require("express")
 const cors = require("cors")
 const signRout = require("./routes/SignUp")
+const loginRout = require("./routes/Login")
 
 const rout = express()
 
@@ -14,12 +16,13 @@ rout.use(cors({
 rout.use(express.json())
 
 //mongoDB connection
-mongoose.connect("mongodb+srv://ToddLerfondler:MoeLester@huddleup.wdtw6ka.mongodb.net/?retryWrites=true&w=majority").then(()=>{
+mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log("hisps conn")
 }).catch((err)=>{console.log(err)})
 
 //Routing
 rout.use("/api/signup",signRout)
+rout.use("/api/login",loginRout)
 
 
 //start the server at specified port

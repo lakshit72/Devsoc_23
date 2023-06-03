@@ -6,7 +6,7 @@ const User = require("../models/User")
 router.post("/",async (req,res)=>{
     const newUser = new User({ 
         userName:req.body.username,
-        userPassWord:cryptoJs.AES.encrypt(req.body.password,"HughGRection").toString(),
+        userPassWord:cryptoJs.AES.encrypt(req.body.password,process.env.ENC_KEY).toString(),
         linkedIn:req.body.linkedIn,
         desc:req.body.desc,
         skills:req.body.skills

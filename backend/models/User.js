@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     linkedIn:{type:String},
     desc:{type:String},
     skills:[{
-        skill:{type:String}
+        type:String
     }],
     notifications:[{
         reqType:{type:String},
